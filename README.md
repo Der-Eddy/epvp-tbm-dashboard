@@ -10,7 +10,9 @@ then go to `https://github.com/Der-Eddy/epvp-tbm-dashboard/raw/master/tbm_dashbo
 
 Screenshots
 -------------
-Ongoing
+![dashboard_link](img/dashboard_link.png)
+
+![dashboard_main](img/dashboard_main.png)
 
 License
 -------------
