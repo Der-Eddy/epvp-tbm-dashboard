@@ -3,9 +3,10 @@
 // @description TBM Stat Dashboard
 // @namespace   Elitepvpers
 // @include     *//www.elitepvpers.com/theblackmarket/*
+// @downloadURL https://github.com/Der-Eddy/epvp-tbm-dashboard/raw/master/tbm_dashboard.user.js
 // @author      Der-Eddy
 // @license     GNU General Public v3 <http://www.gnu.org/licenses/>
-// @version     1.0b1
+// @version     1.0b2
 // @grant       none
 // ==/UserScript==
 
