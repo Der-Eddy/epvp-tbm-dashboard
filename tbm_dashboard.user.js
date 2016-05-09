@@ -6,7 +6,7 @@
 // @downloadURL https://github.com/Der-Eddy/epvp-tbm-dashboard/raw/master/tbm_dashboard.user.js
 // @author      Der-Eddy
 // @license     GNU General Public v3 <http://www.gnu.org/licenses/>
-// @version     1.2b2
+// @version     1.2b3
 // @grant       none
 // @require     https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.bundle.min.js
 // ==/UserScript==
@@ -53,7 +53,7 @@
                 $("td.contentwhite").append('<div><div class="cw1h"></div><div class="cwhead"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><h2>Total TBM Dashboard</h2></td></tr></tbody></table></div><div class="cwalt"></div>');
                 $("td.contentwhite").append('<div><div class="cw1h"></div><div class="cwhead"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><h2>Last Month TBM Dashboard</h2></td></tr></tbody></table></div><div class="cwalt"></div>');
                 $("td.contentwhite").append('<div><div class="cw1h"></div><div class="cwhead"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><h2>Graphical Analysis (DEMO)</h2></td></tr></tbody></table></div><div class="cwalt"></div>');
-                $("td.contentwhite").append('<div><div class="cw1h"></div><div class="cwhead"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><h2>About</h2></td></tr></tbody></table></div><div class="cwalt"></div>');
+                $("td.contentwhite").append('<div><div class="cw1h"></div><div class="cwhead"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><h2>About & Support</h2></td></tr></tbody></table></div><div class="cwalt"></div>');
 
 
                 var userid = tbmapi.match(/u=(\d+)/);
@@ -96,9 +96,10 @@
 
                 //$("div.cwalt:eq(2)").append('<canvas id="tbmchart" height="200"></canvas>');
 
-                $("div.cwalt:eq(3)").append('Created by <a href="https://www.elitepvpers.com/forum/members/984054-der-eddy.html"><span style="color: green;">Der-Eddy</span></a> and released under <a href="http://www.gnu.org/licenses/">GNU General Public License v3</a> on <a href="https://github.com/Der-Eddy/epvp-tbm-dashboard">GitHub</a><br>');
-                $("div.cwalt:eq(3)").append('<a href="https://www.elitepvpers.com/forum/coding-releases/4059303-elite-gold-dashboard-deine-elite-gold-statistik.html">Elitepvpers Thread about this Project</a><br>');
-                $("div.cwalt:eq(3)").append('Donate with <a href="https://www.elitepvpers.com/theblackmarket/sendeg/984054">elite*gold</a> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> or via Bitcoin <i>33vL2Cv4bwDPDUgahcurng5ey35ditqBZc</i><br>');
+                $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/profile.gif"> Created by <a href="https://www.elitepvpers.com/forum/members/984054-der-eddy.html"><span style="color: green;">Der-Eddy</span></a> and released under <a href="http://www.gnu.org/licenses/">GNU General Public License v3</a> on <a href="https://github.com/Der-Eddy/epvp-tbm-dashboard">GitHub</a><br>');
+                $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/middleman.gif"> <a href="https://www.elitepvpers.com/forum/coding-releases/4059303-elite-gold-dashboard-deine-elite-gold-statistik.html">Elitepvpers Thread about this Project</a><br>');
+                $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/namechange.gif"> <a href="https://discord.gg/0ZbfSaE2dpVjIIBu">Discord Support Channel</a> (no registration needed) or send me a <a href="https://www.elitepvpers.com/forum/private.php?do=newpm&u=984054">private message</a><br>');
+                $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/premium.gif"> Donate with <a href="https://www.elitepvpers.com/theblackmarket/sendeg/984054">elite*gold</a> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> or via Bitcoin <i>33vL2Cv4bwDPDUgahcurng5ey35ditqBZc</i><br>');
                 $("div.cwalt:eq(3)").append('<br>Donation List:<ul><li>Be the first!</li></ul>');
 
                 var ctx = document.getElementById("tbmchart");
