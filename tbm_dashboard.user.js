@@ -6,7 +6,7 @@
 // @downloadURL https://github.com/Der-Eddy/epvp-tbm-dashboard/raw/master/tbm_dashboard.user.js
 // @author      Der-Eddy
 // @license     GNU General Public v3 <http://www.gnu.org/licenses/>
-// @version     1.2b3
+// @version     1.2b4
 // @grant       none
 // @require     https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.bundle.min.js
 // ==/UserScript==
@@ -31,11 +31,11 @@
 (function($){
   var hash = window.location.hash;
   var tbmapi = $('a[href*="type=all"]').attr('href');
-  //console.log(hash);
+  console.log(hash);
   //console.log(tbmapi);
 
   //$("td.cbbg:eq(2)").prepend('<div class="cb2h"><img src="https://www.elitepvpers.com/images/tbm/trades.gif" style="float:left" alt="" height="16" width="16"> &nbsp; <a href="https://www.elitepvpers.com/theblackmarket/api/paymentwall/#dashboard" rel="nofollow">TBM Dashboard</a></div>');
-  $('a[href*="https://www.elitepvpers.com/theblackmarket/namechange/"]').parent().parent().prepend('<div class="cb2h"><img src="https://www.elitepvpers.com/images/tbm/trades.gif" style="float:left" alt="" height="16" width="16"> &nbsp; <a href="https://www.elitepvpers.com/theblackmarket/api/paymentwall/#dashboard" rel="nofollow">TBM Dashboard</a></div>');
+  $('a[href*="www.elitepvpers.com/theblackmarket/namechange/"]').parent().parent().prepend('<div class="cb2h"><img src="https://www.elitepvpers.com/images/tbm/trades.gif" style="float:left" alt="" height="16" width="16"> &nbsp; <a href="https://www.elitepvpers.com/theblackmarket/api/paymentwall/#dashboard" rel="nofollow">TBM Dashboard</a></div>');
 
   if(hash == "#dashboard"){
     document.title = "TBM Dashboard";
@@ -57,7 +57,7 @@
 
 
                 var userid = tbmapi.match(/u=(\d+)/);
-                //console.log(userid);
+                console.log(userid);
                 userid = userid[1];
                 var r = 0;
                 var s = 0;
@@ -99,7 +99,7 @@
                 $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/profile.gif"> Created by <a href="https://www.elitepvpers.com/forum/members/984054-der-eddy.html"><span style="color: green;">Der-Eddy</span></a> and released under <a href="http://www.gnu.org/licenses/">GNU General Public License v3</a> on <a href="https://github.com/Der-Eddy/epvp-tbm-dashboard">GitHub</a><br>');
                 $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/middleman.gif"> <a href="https://www.elitepvpers.com/forum/coding-releases/4059303-elite-gold-dashboard-deine-elite-gold-statistik.html">Elitepvpers Thread about this Project</a><br>');
                 $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/namechange.gif"> <a href="https://discord.gg/0ZbfSaE2dpVjIIBu">Discord Support Channel</a> (no registration needed) or send me a <a href="https://www.elitepvpers.com/forum/private.php?do=newpm&u=984054">private message</a><br>');
-                $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/premium.gif"> Donate with <a href="https://www.elitepvpers.com/theblackmarket/sendeg/984054">elite*gold</a> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> or via Bitcoin <i>33vL2Cv4bwDPDUgahcurng5ey35ditqBZc</i><br>');
+                $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/premium.gif"> Donate with <a href="https://www.elitepvpers.com/theblackmarket/sendeg/984054">elite*gold</a> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> or via Bitcoin <a href="https://blockchain.info/de/address/33vL2Cv4bwDPDUgahcurng5ey35ditqBZc"><i>33vL2Cv4bwDPDUgahcurng5ey35ditqBZc</i></a><br>');
                 $("div.cwalt:eq(3)").append('<br>Donation List:<ul><li>Be the first!</li></ul>');
 
                 var ctx = document.getElementById("tbmchart");
