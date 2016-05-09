@@ -6,7 +6,7 @@
 // @downloadURL https://github.com/Der-Eddy/epvp-tbm-dashboard/raw/master/tbm_dashboard.user.js
 // @author      Der-Eddy
 // @license     GNU General Public v3 <http://www.gnu.org/licenses/>
-// @version     1.2b5
+// @version     1.2b6
 // @grant       none
 // @require     https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.bundle.min.js
 // ==/UserScript==
@@ -90,8 +90,8 @@
                 $("div.cwalt:eq(0)").append('Received: <span class="green">' + r + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
                 $("div.cwalt:eq(0)").append('Sent: <span class="red">' + s + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
                 $("div.cwalt:eq(0)").append('Total transactions: ' + jdata.length + '<br>');
-                $("div.cwalt:eq(0)").append('<br>Highest amount received: <span class="green">' + hrobj.amount + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> from ' + hsobj.eg_tousername + '<br>');
-                $("div.cwalt:eq(0)").append('Highest amount sent: <span class="red">' + hsobj.amount + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> to ' + hsobj.eg_tousername + '<br>');
+                $("div.cwalt:eq(0)").append('<br>Highest amount received: <span class="green">' + hrobj.amount + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> from <a href="//www.elitepvpers.com/theblackmarket/profile/' + hrobj.eg_from + '">' + hrobj.eg_fromusername + '</a> (<a href="https://www.elitepvpers.com/theblackmarket/transaction/' + hrobj.eg_transactionid + '">#' + hrobj.eg_transactionid + '</a>)<br>');
+                $("div.cwalt:eq(0)").append('Highest amount sent: <span class="red">' + hsobj.amount + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> to <a href="//www.elitepvpers.com/theblackmarket/profile/' + hsobj.eg_to + '">' + hsobj.eg_tousername + '</a> (<a href="https://www.elitepvpers.com/theblackmarket/transaction/' + hsobj.eg_transactionid + '">#' + hsobj.eg_transactionid + '</a>)<br>');
 
                 $("div.cwalt:eq(1)").append('Received last month: <span class="green">' + rmonth + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
                 $("div.cwalt:eq(1)").append('Sent last month: <span class="red">' + smonth + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
@@ -103,7 +103,7 @@
                 $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/middleman.gif"> <a href="https://www.elitepvpers.com/forum/coding-releases/4059303-elite-gold-dashboard-deine-elite-gold-statistik.html">Elitepvpers Thread about this Project</a><br>');
                 $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/namechange.gif"> <a href="https://discord.gg/0ZbfSaE2dpVjIIBu">Discord Support Channel</a> (no registration needed) or send me a <a href="https://www.elitepvpers.com/forum/private.php?do=newpm&u=984054">private message</a><br>');
                 $("div.cwalt:eq(3)").append('<img src="https://www.elitepvpers.com/images/tbm/premium.gif"> Donate with <a href="https://www.elitepvpers.com/theblackmarket/sendeg/984054">elite*gold</a> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> or via Bitcoin <a href="https://blockchain.info/de/address/33vL2Cv4bwDPDUgahcurng5ey35ditqBZc"><i>33vL2Cv4bwDPDUgahcurng5ey35ditqBZc</i></a><br>');
-                $("div.cwalt:eq(3)").append('<br>Donation List:<ul><li><a href="https://www.elitepvpers.com/forum/members/4232675-afrozilla.html"><span style="color: green;">Afrozilla</span></a> (93 elite*gold)</li></ul>');
+                $("div.cwalt:eq(3)").append('<br>Donation List:<ul><li><a href="https://www.elitepvpers.com/forum/members/4232675-afrozilla.html"><span style="color: green;">Afrozilla</span></a> (93 elite*gold)</li><li><a href="https://www.elitepvpers.com/forum/members/2074798-shura.html"><span style="color:#0099ff;">Shura</span></a> (1$)</li></ul>');
 
                 var ctx = document.getElementById("tbmchart");
                 var tbmChart = new Chart(ctx, {
