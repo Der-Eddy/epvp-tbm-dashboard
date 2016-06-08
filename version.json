@@ -1,0 +1,36 @@
+{
+    "version": "1.2b9",
+    "donations":
+    {
+        "Afrozilla":
+        {
+            "url": "//www.elitepvpers.com/forum/members/4232675-afrozilla.html",
+            "color": "color: green;",
+            "amount": "93 elite*gold"
+        },
+        "Shura":
+        {
+            "url": "//www.elitepvpers.com/forum/members/2074798-shura.html",
+            "color": "color:#0099ff;",
+            "amount": "1$"
+        },
+        "Dr Heisenberg":
+        {
+            "url": "//www.elitepvpers.com/forum/members/5589432-dr-heisenberg.html",
+            "color": "color:#0099ff;",
+            "amount": "15 elite*gold"
+        },
+        "Anonymous™":
+        {
+            "url": "//www.elitepvpers.com/forum/members/5474128-anonymous-.html",
+            "color": "color: black;",
+            "amount": "25 elite*gold"
+        },
+        ".ENDLOS":
+        {
+            "url": "//www.elitepvpers.com/forum/members/4000999--endlos.html",
+            "color": "color: black;",
+            "amount": "100 elite*gold"
+        }
+    }
+}
