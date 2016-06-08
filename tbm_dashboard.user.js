@@ -6,7 +6,7 @@
 // @downloadURL https://github.com/Der-Eddy/epvp-tbm-dashboard/raw/master/tbm_dashboard.user.js
 // @author      Der-Eddy
 // @license     GNU General Public License v3 <http://www.gnu.org/licenses/>
-// @version     1.2b8
+// @version     1.2b9
 // @grant       none
 // @require     https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.bundle.min.js
 // ==/UserScript==
@@ -56,7 +56,7 @@ Array.prototype.getDate = function() {
       $("td.contentwhite").append('Loading ... <img src="https://www.elitepvpers.com/forum/images/misc/progress.gif">');
 
 
-      $.ajax({url:tbmapi,type:"GET",dataType:"json", success:function(jdata)
+      $.ajax({ url: tbmapi, type: 'GET', dataType: 'json', success: function (jdata)
               {
                 $("td.contentwhite").empty();
                 $("td.contentwhite").append('<div><div class="cw1h"></div><div class="cwhead"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><h2>Total TBM Dashboard</h2></td></tr></tbody></table></div><div class="cwalt"></div>');
@@ -74,12 +74,13 @@ Array.prototype.getDate = function() {
                 var rmonth = 0;
                 var smonth = 0;
                 var amonth = 0;
-                var hr=0;
+                var hr = 0;
                 var hrobj;
                 var hs = 0;
                 var hsobj;
                 var rchart = [];
                 var schart = [];
+				var version;
 
                 var dateobj = [];
                 var dateamount = [];
@@ -124,12 +125,18 @@ Array.prototype.getDate = function() {
 				$("div.cwalt:eq(3)").append('<div style="text-align: center;">Insert current exchange rate<br><br>10€ = <input id="ex_rate" size="5" type="text"> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"></div><br>');
 				$("div.cwalt:eq(3)").append('<div style="text-align: center;">Converter<br><input id="euro" size="5" type="text" disabled> € <span style="font-size: 2em; margin: 10px;">&#8596</span> <input id="eg" size="5" type="text" disabled> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"></div><br>');
 
-                $("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/trades.gif"> Your version: <i>' + GM_info['script']['version'] + '</i> | Current version: <i>' + 'n/a' + '</i> <a href="https://github.com/Der-Eddy/epvp-tbm-dashboard/raw/master/tbm_dashboard.user.js">(Instant Update)</a><br>');
-                $("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/profile.gif"> Created by <a href="//www.elitepvpers.com/forum/members/984054-der-eddy.html"><span style="color: green;">Der-Eddy</span></a> and released under <a href="http://www.gnu.org/licenses/">GNU General Public License v3</a> on <a href="https://github.com/Der-Eddy/epvp-tbm-dashboard">GitHub</a><br>');
-                $("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/middleman.gif"> <a href="//www.elitepvpers.com/forum/coding-releases/4059303-elite-gold-dashboard-deine-elite-gold-statistik.html">Elitepvpers Thread about this Project</a><br>');
-                $("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/namechange.gif"> <a href="https://discord.gg/0ZbfSaE2dpVjIIBu">Discord Support Channel</a> (no registration needed) or send me a <a href="//www.elitepvpers.com/forum/private.php?do=newpm&u=984054">private message</a><br>');
-                $("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/premium.gif"> Donate with <a href="//www.elitepvpers.com/theblackmarket/sendeg/984054">elite*gold</a> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> or via Bitcoin <a href="https://blockchain.info/de/address/33vL2Cv4bwDPDUgahcurng5ey35ditqBZc"><i>33vL2Cv4bwDPDUgahcurng5ey35ditqBZc</i></a><br>');
-                $("div.cwalt:eq(4)").append('<br>Donation list:<ul><li><a href="//www.elitepvpers.com/forum/members/4232675-afrozilla.html"><span style="color: green;">Afrozilla</span></a> (93 elite*gold)</li><li><a href="//www.elitepvpers.com/forum/members/2074798-shura.html"><span style="color:#0099ff;">Shura</span></a> (1$)</li><li><a href="//www.elitepvpers.com/forum/members/5589432-dr-heisenberg.html"><span style="color:#0099ff;">Dr Heisenberg</span></a> (15 elite*gold)</li><li><a href="//www.elitepvpers.com/forum/members/5474128-anonymous-.html">Anonymous™</a> (25 elite*gold)</li><li><a href="//www.elitepvpers.com/forum/members/4000999--endlos.html">.ENDLOS</a> (100 elite*gold)</li></ul>');
+				$.ajax({ url: 'https://raw.githubusercontent.com/Der-Eddy/epvp-tbm-dashboard/master/version.json', type: 'GET', dataType: 'json', success: function (jsonversion)
+				{
+					$("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/trades.gif"> Your version: <i>' + GM_info['script']['version'] + '</i> | Current version: <i>' + jsonversion.version + '</i> <a href="https://github.com/Der-Eddy/epvp-tbm-dashboard/raw/master/tbm_dashboard.user.js">(Instant Update)</a><br>');
+					$("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/profile.gif"> Created by <a href="//www.elitepvpers.com/forum/members/984054-der-eddy.html"><span style="color: green;">Der-Eddy</span></a> and released under <a href="http://www.gnu.org/licenses/">GNU General Public License v3</a> on <a href="https://github.com/Der-Eddy/epvp-tbm-dashboard">GitHub</a><br>');
+					$("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/middleman.gif"> <a href="//www.elitepvpers.com/forum/coding-releases/4059303-elite-gold-dashboard-deine-elite-gold-statistik.html">Elitepvpers Thread about this Project</a><br>');
+					$("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/namechange.gif"> <a href="https://discord.gg/0ZbfSaE2dpVjIIBu">Discord Support Channel</a> (no registration needed) or send me a <a href="//www.elitepvpers.com/forum/private.php?do=newpm&u=984054">private message</a><br>');
+					$("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/premium.gif"> Donate with <a href="//www.elitepvpers.com/theblackmarket/sendeg/984054">elite*gold</a> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> or via Bitcoin <a href="https://blockchain.info/de/address/33vL2Cv4bwDPDUgahcurng5ey35ditqBZc"><i>33vL2Cv4bwDPDUgahcurng5ey35ditqBZc</i></a><br>');
+					$("div.cwalt:eq(4)").append('<br>Donation list:<ul id="donation-list"></ul>');
+					for (var name in jsonversion.donations){
+						$("#donation-list").append('<li><a href="' + jsonversion.donations[name].url + '"><span style="' + jsonversion.donations[name].color + '">' + name + '</span></a> (' + jsonversion.donations[name].amount + ')</li>');
+					}
+				}});
 
 				//e*gold converter
 				$('#ex_rate').bind('input', function() {
