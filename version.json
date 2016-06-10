@@ -31,6 +31,12 @@
             "url": "//www.elitepvpers.com/forum/members/4000999--endlos.html",
             "color": "color: black;",
             "amount": "100 elite*gold"
+        },
+        "TrustedCommerce":
+        {
+            "url": "//www.elitepvpers.com/forum/members/5654423-trustedcommerce.html",
+            "color": "color:#0099ff;",
+            "amount": "20 elite*gold"
         }
     }
 }
