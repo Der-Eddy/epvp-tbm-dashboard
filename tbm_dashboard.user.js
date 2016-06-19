@@ -6,7 +6,7 @@
 // @downloadURL https://github.com/Der-Eddy/epvp-tbm-dashboard/raw/master/tbm_dashboard.user.js
 // @author      Der-Eddy
 // @license     GNU General Public License v3 <http://www.gnu.org/licenses/>
-// @version     1.2b10
+// @version     1.2b11
 // @grant       none
 // @require     https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.bundle.min.js
 // ==/UserScript==
@@ -120,7 +120,7 @@ Array.prototype.getDate = function() {
                 $("div.cwalt:eq(1)").append('Transactions last month: ' + amonth + '<br>');
 
                 //$("div.cwalt:eq(2)").append('<canvas id="tbmchart" height="200"></canvas>');
-				$("div.cwalt:eq(2)").append('Demo deativated, sorry');
+				$("div.cwalt:eq(2)").append('Demo deactivated, sorry');
 
 				$("div.cwalt:eq(3)").append('<div style="text-align: center;">Insert current exchange rate<br><br><input id="ex_euro" size="5" value="10" type="text"> € = <input id="ex_rate" size="5" type="text"> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"></div><br>');
 				$("div.cwalt:eq(3)").append('<div style="text-align: center;">Converter<br><input id="euro" size="5" type="text" disabled> € <span style="font-size: 2em; margin: 10px;">&#8596</span> <input id="eg" size="5" type="text" disabled> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"></div><br>');
@@ -147,7 +147,7 @@ Array.prototype.getDate = function() {
 				});
 
 				$('#euro').bind('input', function() {
-				    $('#eg').val(Math.round((parseInt($('#ex_rate').val()) / parseInt($('#ex_euro').val())) * parseInt($(this).val())));
+				  $('#eg').val(Math.round((parseInt($('#ex_rate').val()) / parseInt($('#ex_euro').val())) * parseFloat($(this).val().replace(',', '.'))));
 				});
 
 				$('#eg').bind('input', function() {
