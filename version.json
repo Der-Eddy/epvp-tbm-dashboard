@@ -43,6 +43,12 @@
             "url": "//www.elitepvpers.com/forum/members/5711657-themokko.html",
             "color": "color: black;",
             "amount": "20 elite*gold"
+        },
+        ".Arrow.":
+        {
+            "url": "//www.elitepvpers.com/forum/members/6474516--arrow-.html",
+            "color": "color:#0099ff;",
+            "amount": "120 elite*gold"
         }
     }
 }
