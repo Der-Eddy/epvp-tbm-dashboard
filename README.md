@@ -1,7 +1,8 @@
 Epvp TBM Dashboard
 =====================
 
-Adds a basic dashboard which shows how much elite*gold you received and sent
+Adds a basic dashboard which shows how much elite*gold you received and sent  
+See our [Trello board](https://trello.com/b/6NaxsoVr/tbm-dahsboard) for upcomming features
 
 Install
 -------------

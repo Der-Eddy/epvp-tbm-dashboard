@@ -6,7 +6,7 @@
 // @downloadURL https://github.com/Der-Eddy/epvp-tbm-dashboard/raw/master/tbm_dashboard.user.js
 // @author      Der-Eddy
 // @license     GNU General Public License v3 <http://www.gnu.org/licenses/>
-// @version     1.2b11
+// @version     1.2.12
 // @grant       none
 // @require     https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.bundle.min.js
 // ==/UserScript==
@@ -29,7 +29,7 @@
 
     Chart.js is licensed under MIT: https://github.com/chartjs/Chart.js
 */
-console.log(GM_info['scriptWillUpdate']);
+//console.log(GM_info['scriptWillUpdate']);
 
 Array.prototype.getDate = function() {
 	return this.map(function (obj) {
@@ -109,14 +109,14 @@ Array.prototype.getDate = function() {
                   }
                 }
 
-                $("div.cwalt:eq(0)").append('Received: <span class="green">' + r + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
-                $("div.cwalt:eq(0)").append('Sent: <span class="red">' + s + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
+                $("div.cwalt:eq(0)").append('Received: <span class="green">' + r.toLocaleString() + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
+                $("div.cwalt:eq(0)").append('Sent: <span class="red">' + s.toLocaleString() + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
                 $("div.cwalt:eq(0)").append('Total transactions: ' + jdata.length + '<br>');
-                $("div.cwalt:eq(0)").append('<br>Highest amount received: <span class="green">' + hrobj.amount + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> from <a href="//www.elitepvpers.com/theblackmarket/profile/' + hrobj.eg_from + '">' + hrobj.eg_fromusername + '</a> (<a href="//www.elitepvpers.com/theblackmarket/transaction/' + hrobj.eg_transactionid + '">#' + hrobj.eg_transactionid + '</a>)<br>');
-                $("div.cwalt:eq(0)").append('Highest amount sent: <span class="red">' + hsobj.amount + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> to <a href="//www.elitepvpers.com/theblackmarket/profile/' + hsobj.eg_to + '">' + hsobj.eg_tousername + '</a> (<a href="//www.elitepvpers.com/theblackmarket/transaction/' + hsobj.eg_transactionid + '">#' + hsobj.eg_transactionid + '</a>)<br>');
+                $("div.cwalt:eq(0)").append('<br>Highest amount received: <span class="green">' + parseInt(hrobj.amount).toLocaleString() + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> from <a href="//www.elitepvpers.com/theblackmarket/profile/' + hrobj.eg_from + '">' + hrobj.eg_fromusername + '</a> (<a href="//www.elitepvpers.com/theblackmarket/transaction/' + hrobj.eg_transactionid + '">#' + hrobj.eg_transactionid + '</a>)<br>');
+                $("div.cwalt:eq(0)").append('Highest amount sent: <span class="red">' + parseInt(hsobj.amount).toLocaleString() + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> to <a href="//www.elitepvpers.com/theblackmarket/profile/' + hsobj.eg_to + '">' + hsobj.eg_tousername + '</a> (<a href="//www.elitepvpers.com/theblackmarket/transaction/' + hsobj.eg_transactionid + '">#' + hsobj.eg_transactionid + '</a>)<br>');
 
-                $("div.cwalt:eq(1)").append('Received last month: <span class="green">' + rmonth + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
-                $("div.cwalt:eq(1)").append('Sent last month: <span class="red">' + smonth + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
+                $("div.cwalt:eq(1)").append('Received last month: <span class="green">' + parseInt(rmonth).toLocaleString() + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
+                $("div.cwalt:eq(1)").append('Sent last month: <span class="red">' + parseInt(smonth).toLocaleString() + '</span> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"><br>');
                 $("div.cwalt:eq(1)").append('Transactions last month: ' + amonth + '<br>');
 
                 //$("div.cwalt:eq(2)").append('<canvas id="tbmchart" height="200"></canvas>');
@@ -129,7 +129,7 @@ Array.prototype.getDate = function() {
 				{
 					$("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/trades.gif"> Your version: <i>' + GM_info['script']['version'] + '</i> | Current version: <i>' + jsonversion.version + '</i> <a href="https://github.com/Der-Eddy/epvp-tbm-dashboard/raw/master/tbm_dashboard.user.js">(Instant Update)</a><br>');
 					$("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/profile.gif"> Created by <a href="//www.elitepvpers.com/forum/members/984054-der-eddy.html"><span style="color: green;">Der-Eddy</span></a> and released under <a href="http://www.gnu.org/licenses/">GNU General Public License v3</a> on <a href="https://github.com/Der-Eddy/epvp-tbm-dashboard">GitHub</a><br>');
-					$("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/middleman.gif"> <a href="//www.elitepvpers.com/forum/coding-releases/4059303-elite-gold-dashboard-deine-elite-gold-statistik.html">Elitepvpers Thread about this Project</a><br>');
+					$("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/middleman.gif"> <a href="//www.elitepvpers.com/forum/coding-releases/4059303-elite-gold-dashboard-deine-elite-gold-statistik.html">Elitepvpers Thread about this Project</a> | <a href="https://trello.com/b/6NaxsoVr/tbm-dahsboard">Trello Board (vote upcomming features!)</a><br>');
 					$("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/namechange.gif"> <a href="https://discord.gg/0ZbfSaE2dpVjIIBu">Discord Support Channel</a> (no registration needed) or send me a <a href="//www.elitepvpers.com/forum/private.php?do=newpm&u=984054">private message</a><br>');
 					$("div.cwalt:eq(4)").append('<img src="https://www.elitepvpers.com/images/tbm/premium.gif"> Donate with <a href="//www.elitepvpers.com/theblackmarket/sendeg/984054">elite*gold</a> <img src="https://www.elitepvpers.com/images/tbm/gold.gif"> or via Bitcoin <a href="https://blockchain.info/de/address/33vL2Cv4bwDPDUgahcurng5ey35ditqBZc"><i>33vL2Cv4bwDPDUgahcurng5ey35ditqBZc</i></a><br>');
 					$("div.cwalt:eq(4)").append('<br>Donation list:<ul id="donation-list"></ul>');
