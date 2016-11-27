@@ -12,7 +12,7 @@
 // ==/UserScript==
 
 /*
-	Copyright (C) 2016 Eduard Nikoleisen (Der-Eddy)
+	Copyright (C) 2016 - 2017 Eduard Nikoleisen (Der-Eddy)
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
