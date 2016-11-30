@@ -79,6 +79,12 @@
             "url": "//www.elitepvpers.com/forum/members/6943334-shyash.html",
             "color": "color:#0099ff;",
             "amount": "200 elite*gold"
+        },
+        "Devsome":
+        {
+            "url": "//www.elitepvpers.com/forum/members/1199443-devsome.html",
+            "color": "color:green;",
+            "amount": "125 elite*gold"
         }
     }
 }
